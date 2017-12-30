@@ -1,16 +1,11 @@
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-</head>
-
 <% if !user_signed_in? # if the user is not signed in, render this %>
     <style>
         body {
-            background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
+             background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
                 rgba(0,0,0, 0.7),
                 rgba(0,0,0, 0.7)
-                ), url("/bg.jpg") no-repeat center center fixed
-            
+                ), url("political rally.jpg") no-repeat center center fixed
+                
             ; /* only display once, center horizontal and vertical, dont let scroll change position. */
             -webkit-background-size: cover;
             -moz-background-size: cover; /* cover the whole html element. */
@@ -21,7 +16,8 @@
             color: white;
             font-weight: bold;
         }
-        .container-index {
+        .container-index row {
+            float: left;
             margin-right: 15%;
             margin-left: 15%;
         }
@@ -37,43 +33,52 @@
             font-size: 75%;
         }
         .log-in {
+            color: white;
             float: right;
             width: 300px;
             height: 150px;
             margin-top: 7.5%;
         }
         .sign-up {
+            margin-top: 30%;
+            color: white;
             float: right;
             width: 300px;
             height: 250px;
         }
         .log-in-form {
+            color: white;
             margin: 5px;
+            float: right;
         }
     </style>
     
+<div class="container">
     <div class="container-index row">
         <div class="col-sm-6">
-            <h1>Welcome to Flutter.</h1>
+            <h1>Welcome to Just Your Vote.</h1>
             <p class="text">
-                Connect with your buddies. Chat with new friends.<br>
-                Share your adventures. Have fun! <br>
-                Just like a blog, but with less characters!
+                Fed up of "fake news"? <br>
+                Of being force fed opinions by "experts"? <br>
+                Ask your Question- <br>
+                And find out what the World <italic>really</italic> thinks.
             </p>
         </div>
         <div class="col-sm-6">
                    <div class="log-in panel">
-                       Log In
-                    </div> 
-                    
-                   <div class="sign-up panel">
-                        Sign Up
+                       <h4>Log In</h4>
+                      <%= render '/components/log_in' %>
                    </div> 
-        </div>
+                    
+                   <div class="sign-up panel">     
+                         <h4>New User?</h4>           
+                        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>                    </div> 
+                   </div>
         
         <div class="col-sm-12">
             <p class="footer-links">About  Help  Blog  Status  Jobs  Terms  Privacy  Cookies  Ads  info  Brand  Advertise  Businesses  Media  Developers  Directory © 2016 Flutter</p>
         </div>
+</div>
         
     </div>
 
