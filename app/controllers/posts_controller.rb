@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
     
-    
+   
+
     def new 
         @post = Post.new
     end
@@ -20,8 +21,7 @@ class PostsController < ApplicationController
     
     private
     def post_params # allows certain data to be passed via form.
-        params.require(:post).permit(:user_id, :content)
-        
+        params.require(:post).permit(:user_id, :content)      
     end
     
 end
